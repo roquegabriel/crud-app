@@ -26,12 +26,12 @@ $data = $conn->query("SELECT * FROM task");
         </tr>
     </thead>
     <tbody>
-        <?php while($row = $data->fetch(PDO::FETCH_OBJ)) :?>
-        <tr>
-            <th scope="row"><?php echo $row->id; ?></th>
-            <td><?php echo $row->name; ?></td>
-            <td><a class="btn btn-danger btn-sm" href="#" role="button">Delete</a></td>
-        </tr>
+        <?php while ($row = $data->fetch(PDO::FETCH_OBJ)) : ?>
+            <tr>
+                <th scope="row"><?php echo $row->id; ?></th>
+                <td><?php echo $row->name; ?></td>
+                <td><a class="btn btn-danger btn-sm" href="/delete.php?id=<?php echo $row->id; ?>" role="button">Delete</a></td>
+            </tr>
         <?php endwhile; ?>
     </tbody>
 </table>
