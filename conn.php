@@ -1,7 +1,6 @@
 <?php
 
 try {
-
     $host = "localhost";
     $dbname = "todo";
     $user = "root";
