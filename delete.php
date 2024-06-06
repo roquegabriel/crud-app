@@ -2,7 +2,7 @@
 
 require __DIR__ . '/conn.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $delete = $conn->prepare("DELETE FROM task WHERE id=:id");
     $delete->execute([

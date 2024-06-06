@@ -3,7 +3,7 @@
 require __DIR__ . '/inc/header.php';
 require __DIR__ . '/conn.php';
 
-$data = $conn->query("SELECT * FROM task ORDER BY id DESC;");
+$rows = $conn->query("SELECT id,name FROM task ORDER BY id DESC");
 
 ?>
 
@@ -28,14 +28,14 @@ $data = $conn->query("SELECT * FROM task ORDER BY id DESC;");
                 </tr>
             </thead>
             <tbody>
-                <?php while ($row = $data->fetch(PDO::FETCH_OBJ)) : ?>
+                <?php foreach ($rows as $row) : ?>
                     <tr>
-                        <th scope="row"><?php echo $row->id; ?></th>
-                        <td><?php echo $row->name; ?></td>
-                        <td><a class="btn btn-danger btn-sm" href="/delete.php?id=<?php echo $row->id; ?>" role="button">Delete</a></td>
-                        <td><a class="btn btn-success btn-sm" href="/update.php?id=<?php echo $row->id; ?>" role="button">Update</a></td>
+                        <th scope="row"><?php echo $row['id'] ?></th>
+                        <td><?php echo $row['name'] ?></td>
+                        <td><a class="btn btn-danger btn-sm" href="/delete.php?id=<?php echo $row['id'] ?>" role="button">Delete</a></td>
+                        <td><a class="btn btn-success btn-sm" href="/update.php?id=<?php echo $row['id'] ?>" role="button">Update</a></td>
                     </tr>
-                <?php endwhile; ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
