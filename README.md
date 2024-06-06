@@ -1,0 +1,1 @@
+Simple application TODO that performs CRUD operations with PHP, Bootstrap and MySQL
