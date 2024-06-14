@@ -1,6 +1,5 @@
+<?php require __DIR__ . '/inc/header.php'; ?>
 <?php
-
-require __DIR__ . '/inc/header.php';
 require __DIR__ . '/conn.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
